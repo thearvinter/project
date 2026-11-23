@@ -5,8 +5,8 @@ import streamlit as st  # библиотека для веб-интерфейс�
 
 import analyzer  # наш модуль с логикой анализа
 
-st.set_page_config(page_title="Анализ расходов", page_icon="💸", layout="wide")  # заголовок вкладки
-st.title("💸 Анализ личных расходов")  # большой заголовок на странице
+st.set_page_config(page_title="Анализ расходов", layout="wide")  # заголовок вкладки
+st.title("Анализ личных расходов")  # большой заголовок на странице
 
 st.sidebar.header("Выписка")  # заголовок боковой панели
 uploaded = st.sidebar.file_uploader("Загрузите CSV или XLSX", type=["csv", "xlsx"])  # кнопка загрузки
