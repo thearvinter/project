@@ -8,9 +8,9 @@
 ## Команда
 
 - Иванников Арсений — [@thearvinter](https://github.com/thearvinter)
-- [@ivanp9359](https://github.com/ivanp9359)
-- [@Sharpsnatcher](https://github.com/Sharpsnatcher)
-- [@gulievilkham5-star](https://github.com/gulievilkham5-star)
+- Прохоров Иван - [@ivanp9359](https://github.com/ivanp9359)
+- Палочкин Никита - [@Sharpsnatcher](https://github.com/Sharpsnatcher)
+- Гулиев Ильхам - [@gulievilkham5-star](https://github.com/gulievilkham5-star)
 
 ## Что умеет
 
