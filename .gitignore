@@ -1,0 +1,5 @@
+# виртуальное окружение и служебные файлы Python
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
