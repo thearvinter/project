@@ -3,10 +3,14 @@
 Веб-приложение на Streamlit. Загружаете банковскую выписку (CSV или Excel) и видите:
 сколько потрачено, на что, как менялись траты по месяцам и какие покупки были необычно крупными.
 
-**Команда:** Иванников Арсений ([@thearvinter](https://github.com/thearvinter)),
-[@ivanp9359](https://github.com/ivanp9359), [@Sharpsnatcher](https://github.com/Sharpsnatcher),
-[@gulievilkham5-star](https://github.com/gulievilkham5-star)
 **Дисциплина:** «Разработка программных средств», РАНХиГС
+
+## Команда
+
+- Иванников Арсений — [@thearvinter](https://github.com/thearvinter)
+- [@ivanp9359](https://github.com/ivanp9359)
+- [@Sharpsnatcher](https://github.com/Sharpsnatcher)
+- [@gulievilkham5-star](https://github.com/gulievilkham5-star)
 
 ## Что умеет
 
