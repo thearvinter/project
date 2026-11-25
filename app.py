@@ -47,7 +47,7 @@ col4.metric("В среднем в день", f"{summary['per_day']:,.0f} ₽".re
 
 tab1, tab2, tab3 = st.tabs(["Обзор", "Крупные траты", "Все операции"])  # три вкладки
 
-with tab1:  # первая вкладка — графики
+with tab1:  # первая вкладка - графики
     left, right = st.columns(2)  # две колонки для двух графиков
     categories = analyzer.expenses_by_category(df)  # траты по категориям
     pie = px.pie(categories, names="category", values="amount", hole=0.4)  # круговая диаграмма
@@ -59,7 +59,7 @@ with tab1:  # первая вкладка — графики
     right.plotly_chart(bars)  # рисуем столбцы
     st.dataframe(categories, hide_index=True)  # таблица с суммами по категориям
 
-with tab2:  # вторая вкладка — необычно крупные траты
+with tab2:  # вторая вкладка - необычно крупные траты
     st.caption("Трата больше Q3 + 3·(Q3 − Q1) своей категории и не меньше 3 000 ₽")  # правило
     big = analyzer.find_big_spendings(df)  # ищем крупные траты
     if big.empty:  # если не нашли
@@ -67,7 +67,7 @@ with tab2:  # вторая вкладка — необычно крупные т
     else:  # если нашли
         st.dataframe(big, hide_index=True)  # показываем таблицу
 
-with tab3:  # третья вкладка — все операции
+with tab3:  # третья вкладка - все операции
     search = st.text_input("Поиск по описанию")  # строка поиска
     shown = df[df["description"].str.contains(search, case=False, regex=False)] if search else df  # фильтр
     st.dataframe(shown, hide_index=True)  # показываем операции
