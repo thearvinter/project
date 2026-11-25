@@ -7,9 +7,9 @@ from pathlib import Path  # удобная работа с путями
 import pandas as pd  # таблицы
 import pytest  # библиотека для тестов
 
-ROOT = Path(__file__).parent.parent  # папка проекта (на уровень выше папки tests)
+ROOT = Path(__file__).parent.parent  # папка проекта 
 sys.path.insert(0, str(ROOT))  # теперь можно импортировать analyzer
-import analyzer  # noqa: E402 — наш модуль, импорт после настройки пути
+import analyzer  # noqa: E402 - наш модуль, импорт после настройки пути
 
 
 def make_table():
