@@ -50,7 +50,7 @@ def read_statement(file, filename):
     else:  # иначе считаем, что это CSV
         raw = file.read()  # читаем файл как набор байтов
         try:  # сначала пробуем самую частую кодировку
-            text = raw.decode("utf-8-sig")  # UTF-8 (sig убирает невидимый символ в начале)
+            text = raw.decode("utf-8-sig")  # убирает невидимый символ в начале
         except UnicodeDecodeError:  # если не получилось
             text = raw.decode("cp1251")  # пробуем старую кодировку Windows, её используют банки
         df = pd.read_csv(io.StringIO(text), sep=None, engine="python")  # pandas сам найдёт ; или ,
@@ -101,7 +101,7 @@ def get_summary(df):
     expenses = float(-df[df["amount"] < 0]["amount"].sum())  # сумма всех трат со знаком плюс
     days = (df["date"].max() - df["date"].min()).days + 1  # сколько дней в выписке
     return {  # возвращаем словарь с результатами
-        "income": round(income, 2),  # доходы, округлённые до копеек
+        "income": round(income, 2),  # доходы, округленные до копеек
         "expenses": round(expenses, 2),  # расходы
         "balance": round(income - expenses, 2),  # что осталось
         "per_day": round(expenses / days, 2),  # средний расход в день
@@ -110,7 +110,7 @@ def get_summary(df):
 
 def expenses_by_category(df):
     """Считает, сколько потрачено в каждой категории."""
-    spent = df[df["amount"] < 0].copy()  # берём только траты
+    spent = df[df["amount"] < 0].copy()  # берем только траты
     spent["amount"] = -spent["amount"]  # делаем суммы положительными
     result = spent.groupby("category")["amount"].sum().reset_index()  # складываем по категориям
     result["share"] = (result["amount"] / result["amount"].sum() * 100).round(1)  # доля в %
@@ -132,7 +132,7 @@ def find_big_spendings(df, min_amount=3000):
     Правило: трата необычная, если она больше Q3 + 3 * (Q3 - Q1) своей категории
     и при этом не меньше min_amount рублей. Q1 и Q3 — это квартили (25% и 75% трат).
     """
-    spent = df[df["amount"] < 0].copy()  # берём только траты
+    spent = df[df["amount"] < 0].copy()  # берем только траты
     spent["amount"] = -spent["amount"]  # делаем суммы положительными
     found = []  # сюда будем складывать найденные траты
     for category, group in spent.groupby("category"):  # перебираем категории
